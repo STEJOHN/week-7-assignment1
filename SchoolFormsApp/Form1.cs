@@ -51,12 +51,30 @@ namespace SchoolFormsApp
             {
                 testSchool.TwitterAddress = txtTwitter.Text;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
             MessageBox.Show(testSchool.ToString());
+
+            var teacher = new Teacher(); //for testing only
+
+
+        }
+
+        private void btnTestTeacher_Click(object sender, EventArgs e)
+        {
+            var teacher = new Teacher();
+            var gp = teacher.ComputeGradeAverage();
+            MessageBox.Show("the teacher's GPA is" + gp);
+        }
+
+        private void btnTestStudent_Click(object sender, EventArgs e)
+        {
+            var student = new Student();
+            var gp = student.ComputeGradeAverage();
+            MessageBox.Show("the student's GPA is " + gp);
         }
     }
 }
